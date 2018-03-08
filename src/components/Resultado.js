@@ -6,10 +6,7 @@ import {
 import Visor from './Visor';
 
 const Resultado = props => (
-    // <View>
-    //     <Text>Resultado</Text>
-    // </View>
-    <Visor />
+    <Visor resultado={props.resultado} />
 );
 
 //parecido como Resultado: Resultado

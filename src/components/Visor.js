@@ -11,6 +11,7 @@ export default props => (
         <TextInput style={styles.visor}
             placeholder='Resultado'
             editable={false}
+            value={props.resultado}
         />
     </View>
 );
