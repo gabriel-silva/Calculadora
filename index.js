@@ -1,4 +1,13 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import React, { Component } from 'react';
+import {
+    View,
+    AppRegistry
+} from 'react-native';
 
-AppRegistry.registerComponent('Calculadora', () => App);
+import App from './src/App';
+
+const index = () => (
+    <App />
+)
+
+AppRegistry.registerComponent('Calculadora', () => index);
