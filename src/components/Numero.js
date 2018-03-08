@@ -8,7 +8,7 @@ export default props => (
     <TextInput
         style={styles.numero}
         value={props.num}
-        onChangeText={valorDoCampo => { props.atulizarValor(props.nome, valorDoCampo); }}
+        onChangeText={valorDoCampo => { props.atulizarValo(props.nome, valorDoCampo); }}
     />
 );
 

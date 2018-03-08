@@ -11,22 +11,41 @@ class Painel extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { num1: '10', num2: '25' };
+        this.state = { num1: '10', num2: '25', operacao: 'soma' };
 
         //preservando o contexto da função calcular
         this.calcular = this.calcular.bind(this);
         //preservando o contexto da função atualizarValor
-        this.atualizarValor = this.atualizarValor.bind(this);
+        this.atualizaValor = this.atualizaValor.bind(this);
+        //preservando o contexto da função atualizaOperacao
+        this.atualizaOperacao = this.atualizaOperacao.bind(this);
     }
 
     calcular() {
-        const resultado = parseFloat(this.state.num1) + parseFloat(this.state.num2);
+        let resultado = 0;
+        switch (this.state.operacao) {
+            case 'soma':
+                resultado = parseFloat(this.state.num1) + parseFloat(this.state.num2);
+                break;
+
+            case 'subtracao':
+                resultado = parseFloat(this.state.num1) - parseFloat(this.state.num2);
+                break;
+
+            default:
+                resultado = 0;
+        }
+        console.log(resultado);
     }
 
-    atualizarValor(nomeCampo, numero) {
+    atualizaValor(nomeCampo, numero) {
         const obj = {};
         obj[nomeCampo] = numero;
         this.setState(obj);
+    }
+
+    atualizaOperacao(operacao) {
+        this.setState({ operacao: operacao });
     }
 
     render() {
@@ -36,7 +55,9 @@ class Painel extends Component {
                     num1={this.state.num1}
                     num2={this.state.num2}
                     atulizarValor={this.atualizarValor} />
-                <Operacao />
+                <Operacao
+                    operacao={this.state.operacao}
+                    atualizaOperacao={this.atualizaOperacao} />
                 <Comando acao={this.calcular} />
             </View>
         );
