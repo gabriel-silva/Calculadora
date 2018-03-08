@@ -15,17 +15,27 @@ class Painel extends Component {
 
         //preservando o contexto da função calcular
         this.calcular = this.calcular.bind(this);
+        //preservando o contexto da função atualizarValor
+        this.atualizarValor = this.atualizarValor.bind(this);
     }
 
     calcular() {
         const resultado = parseFloat(this.state.num1) + parseFloat(this.state.num2);
-        console.log(resultado);
+    }
+
+    atualizarValor(nomeCampo, numero) {
+        const obj = {};
+        obj[nomeCampo] = numero;
+        this.setState(obj);
     }
 
     render() {
         return (
             <View>
-                <Entrada num1={this.state.num1} num2={this.state.num2} />
+                <Entrada
+                    num1={this.state.num1}
+                    num2={this.state.num2}
+                    atulizarValor={this.atualizarValor} />
                 <Operacao />
                 <Comando acao={this.calcular} />
             </View>

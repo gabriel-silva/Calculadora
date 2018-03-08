@@ -7,8 +7,8 @@ import Numero from './Numero';
 
 export default props => (
     <View style={styles.numeros}>
-        <Numero num={props.num1} />
-        <Numero num={props.num2} />
+        <Numero num={props.num1} atulizarValor={props.atulizarValor} nome='num1' />
+        <Numero num={props.num2} atulizarValor={props.atulizarValor} nome='num2' />
     </View>
 );
 

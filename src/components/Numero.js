@@ -5,7 +5,11 @@ import {
 } from 'react-native';
 
 export default props => (
-    <TextInput style={styles.numero} value={props.num} />
+    <TextInput
+        style={styles.numero}
+        value={props.num}
+        onChangeText={valorDoCampo => { props.atulizarValor(props.nome, valorDoCampo); }}
+    />
 );
 
 const styles = StyleSheet.create({
