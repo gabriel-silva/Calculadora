@@ -10,7 +10,7 @@ export default props => (
     <View>
         <TextInput style={styles.visor}
             placeholder='Resultado'
-        //editable={false}
+            editable={false}
         />
     </View>
 );
