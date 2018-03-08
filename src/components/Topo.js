@@ -3,14 +3,14 @@ import {
     View,
     Text
 } from 'react-native';
+import Cabecalho from './Cabecalho';
 
-const Topo = props => {
-    return (
-        <View>
-            <Text>Topo</Text>
-        </View>
-    );
-}
+const Topo = props => (
+    <Cabecalho />
+    // <View>
+    //     <Text>Topo</Text>
+    // </View>
+);
 
 //parecido como Topo: Topo
 export { Topo };

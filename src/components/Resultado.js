@@ -4,13 +4,11 @@ import {
     Text
 } from 'react-native';
 
-const Resultado = props => {
-    return (
-        <View>
-            <Text>Resultado</Text>
-        </View>
-    );
-}
+const Resultado = props => (
+    <View>
+        <Text>Resultado</Text>
+    </View>
+);
 
 //parecido como Resultado: Resultado
 export { Resultado };

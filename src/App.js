@@ -7,7 +7,7 @@ import { Topo, Resultado, Painel } from './components';
 
 export default props => (
     <View>
-        <Teste />
+        <Topo />
         <Resultado />
         <Painel />
     </View>
