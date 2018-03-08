@@ -11,11 +11,15 @@ class Painel extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { num1: '', num2: '' };
+        this.state = { num1: '10', num2: '25' };
+
+        //preservando o contexto da função calcular
+        this.calcular = this.calcular.bind(this);
     }
 
     calcular() {
-        console.log('Sim, vamos calcular');
+        const resultado = parseFloat(this.state.num1) + parseFloat(this.state.num2);
+        console.log(resultado);
     }
 
     render() {
